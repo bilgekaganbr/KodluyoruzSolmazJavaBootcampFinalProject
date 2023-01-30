@@ -1,0 +1,1183 @@
+{
+	"info": {
+		"_postman_id": "13a7d582-8713-4425-af50-e870fbbf0970",
+		"name": "seyahatcepte",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "registerIndividualUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"BilgeKagan\",\r\n    \"name\" : \"Bilge Kağan\",\r\n    \"surname\" : \"Börekçi\",\r\n    \"email\" : \"bilgekaganbr@gmail.com\",\r\n    \"password\" : \"bilge@pass\",\r\n    \"phoneNumber\" : \"5326207100\",\r\n    \"type\" : \"INDIVIDUAL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerCorporateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"CemDırman\",\r\n    \"name\" : \"Cem\",\r\n    \"surname\" : \"Dırman\",\r\n    \"email\" : \"cemdrman@gmail.com\",\r\n    \"password\" : \"cem@pass\",\r\n    \"phoneNumber\" : \"05334798761\",\r\n    \"type\" : \"CORPORATE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticateIndividualUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"BilgeKagan\",\r\n    \"userPassword\" : \"bilge@pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticateCorporateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"CemDırman\",\r\n    \"userPassword\" : \"cem@pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticateAdminUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"admin123\",\r\n    \"userPassword\" : \"admin@pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminCreateBus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA4OTgyMiwiaWF0IjoxNjc1MDcxODIyfQ.Y-bcn8TsXgLClMExe3DzlecjpVCU8RaCOk2_ZzjwlhmQHIRccBTVGnvhiVOEVsaXhRT62SVgVB5dBRdDS-ankQ",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"beginning\" : \"İstanbul\",\r\n    \"destination\" : \"İzmir\",\r\n    \"month\" : \"Şubat\",\r\n    \"day\" : \"22\",\r\n    \"hour\" : \"20.00\",\r\n    \"price\" : 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/bus/services/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"bus",
+						"services",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminCreateAeroplane",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA4OTgyMiwiaWF0IjoxNjc1MDcxODIyfQ.Y-bcn8TsXgLClMExe3DzlecjpVCU8RaCOk2_ZzjwlhmQHIRccBTVGnvhiVOEVsaXhRT62SVgVB5dBRdDS-ankQ",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"beginning\" : \"Antalya\",\r\n    \"destination\" : \"Ankara\",\r\n    \"month\" : \"Kasım\",\r\n    \"day\" : \"4\",\r\n    \"hour\" : \"19.00\",\r\n    \"price\" : 800\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/admin/aeroplane/services/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"aeroplane",
+						"services",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "individualUserBuyBusTicketWithCreditCard",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDg5OTQyLCJpYXQiOjE2NzUwNzE5NDJ9.NeEzQUUz0bAl9B-ZU4MUaKglax9EIiw1cDi4Z74gWsacG154UGwWOR1jYpjmQ8jx4QG-bcO_mbcDdVWj9ZkCFg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"BilgeKagan\",\r\n    \"cardNo\" : \"11111\",\r\n    \"customerGenders\" : \"MMFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/bus/services/buy/creditCard/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"buy",
+						"creditCard",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "individualUserBuyAeroplaneTicketWithCreditCard",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDg5OTQyLCJpYXQiOjE2NzUwNzE5NDJ9.NeEzQUUz0bAl9B-ZU4MUaKglax9EIiw1cDi4Z74gWsacG154UGwWOR1jYpjmQ8jx4QG-bcO_mbcDdVWj9ZkCFg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"BilgeKagan\",\r\n    \"cardNo\" : \"11111\",\r\n    \"customerGenders\" : \"MMFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/buy/creditCard/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"buy",
+						"creditCard",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "individualUserBuyBusTicketWithEFT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDkwMTQ2LCJpYXQiOjE2NzUwNzIxNDZ9.5RziwUHTsTpZyaPleFpdmybhTWFmtUFJrK5xCiCu1vzXUnO7BewySJx0iy9BItGTRnRJc_hkVHg5F2AsuDN_PA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"BilgeKagan\",\r\n    \"senderIban\" : \"11111\",\r\n    \"receiverIban\" : \"22222\",\r\n    \"customerGenders\": \"FM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/bus/services/buy/EFT/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"buy",
+						"EFT",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "individualUserBuyAeroplaneTicketWithEFT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDkwMTQ2LCJpYXQiOjE2NzUwNzIxNDZ9.5RziwUHTsTpZyaPleFpdmybhTWFmtUFJrK5xCiCu1vzXUnO7BewySJx0iy9BItGTRnRJc_hkVHg5F2AsuDN_PA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"BilgeKagan\",\r\n    \"senderIban\" : \"11111\",\r\n    \"receiverIban\" : \"22222\",\r\n    \"customerGenders\" : \"FMFMFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/buy/EFT/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"buy",
+						"EFT",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corporateUserBuyBusTicketWithCreditCard",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDkwMjY5LCJpYXQiOjE2NzUwNzIyNjl9.baENAxHzq9dtIa9iPIIZ9fuUHaH6w11BM90owWXvjOVwv4tSigAaNUK8nr8dBNID8UrAnc9jR3TlgL_Wk7502w",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"CemDırman\",\r\n    \"cardNo\" : \"22222\",\r\n    \"customerGenders\" : \"MMMMMMFFFFFFFFF\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/bus/services/buy/creditCard/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"buy",
+						"creditCard",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corporateUserBuyAeroplaneTicketWithCreditCard",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDkwMjY5LCJpYXQiOjE2NzUwNzIyNjl9.baENAxHzq9dtIa9iPIIZ9fuUHaH6w11BM90owWXvjOVwv4tSigAaNUK8nr8dBNID8UrAnc9jR3TlgL_Wk7502w",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"CemDırman\",\r\n    \"cardNo\" : \"22222\",\r\n    \"customerGenders\" : \"MFMFMF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/buy/creditCard/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"buy",
+						"creditCard",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corporateUserBuyBusTicketWithEFT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDkwMjY5LCJpYXQiOjE2NzUwNzIyNjl9.baENAxHzq9dtIa9iPIIZ9fuUHaH6w11BM90owWXvjOVwv4tSigAaNUK8nr8dBNID8UrAnc9jR3TlgL_Wk7502w",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"CemDırman\",\r\n    \"senderIban\" : \"11111\",\r\n    \"receiverIban\" : \"22222\",\r\n    \"customerGenders\" : \"MMMFFFFFFFFFFFFFFFFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/bus/services/buy/EFT/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"buy",
+						"EFT",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "corporateUserBuyAeroplaneTicketWithEFT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDkwMjY5LCJpYXQiOjE2NzUwNzIyNjl9.baENAxHzq9dtIa9iPIIZ9fuUHaH6w11BM90owWXvjOVwv4tSigAaNUK8nr8dBNID8UrAnc9jR3TlgL_Wk7502w",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"CemDırman\",\r\n    \"senderIban\" : \"11111\",\r\n    \"receiverIban\" : \"22222\",\r\n    \"customerGenders\" : \"MM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/buy/EFT/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"buy",
+						"EFT",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBusServices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA4OTgyMiwiaWF0IjoxNjc1MDcxODIyfQ.Y-bcn8TsXgLClMExe3DzlecjpVCU8RaCOk2_ZzjwlhmQHIRccBTVGnvhiVOEVsaXhRT62SVgVB5dBRdDS-ankQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/bus/services",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAeroplaneServices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA4OTgyMiwiaWF0IjoxNjc1MDcxODIyfQ.Y-bcn8TsXgLClMExe3DzlecjpVCU8RaCOk2_ZzjwlhmQHIRccBTVGnvhiVOEVsaXhRT62SVgVB5dBRdDS-ankQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/aeroplane/services",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBusServicesByBeginning",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDg4OTU2LCJpYXQiOjE2NzUwNzA5NTZ9.ny_DdGsHQptiU2EVOZTvMuXoKvV11RPcMts57TRO7rFqkJJV9vM6yNF8XG2OeHqzmOJqOgcVHCUoK-wAGs76XQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/bus/services/beginning/Ankara",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"beginning",
+						"Ankara"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBusServicesByDestination",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDg4OTU2LCJpYXQiOjE2NzUwNzA5NTZ9.ny_DdGsHQptiU2EVOZTvMuXoKvV11RPcMts57TRO7rFqkJJV9vM6yNF8XG2OeHqzmOJqOgcVHCUoK-wAGs76XQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/bus/services/destination/İstanbul",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"destination",
+						"İstanbul"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBusServicesByMonth",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDg5MTk0LCJpYXQiOjE2NzUwNzExOTR9.jnO7M_7rrr1d9KmRsPinKSdqzwdZFRv6Mb-d7-Voi4eHQChPnr6DfR8XGuWBbzl88Vt1PFyw0ZFU1KHiHCne4A",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/bus/services/month/Şubat",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"month",
+						"Şubat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBusServicesByMonthAndDay",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDg5MTk0LCJpYXQiOjE2NzUwNzExOTR9.jnO7M_7rrr1d9KmRsPinKSdqzwdZFRv6Mb-d7-Voi4eHQChPnr6DfR8XGuWBbzl88Vt1PFyw0ZFU1KHiHCne4A",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/bus/services/month/day/Şubat/22",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"month",
+						"day",
+						"Şubat",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBusServicesByMonthAndDayAndHour",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDg5Mjc3LCJpYXQiOjE2NzUwNzEyNzd9.GDUlcv7kP_HS5zPVqTCJS_rMv20ixt_sJL6llweZIlWCDietjCVv8hHBghNBmuEbfJGqT8NZme2ImuYYZ86OKA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/bus/services/month/day/hour/Şubat/22/20.00",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"services",
+						"month",
+						"day",
+						"hour",
+						"Şubat",
+						"22",
+						"20.00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAeroplaneServicesByBeginning",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDg2Mzc3LCJpYXQiOjE2NzUwNjgzNzd9.hOI7MhW9M0mTCpRYDrYoSx4cMDmXJ9omzu9zvb2fKQJx6HEFya7HS2ooA3cz2J0qLy3bj62vGgP5_0qtOB9Nsg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/beginning/İstanbul",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"beginning",
+						"İstanbul"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAeroplaneServicesByDestination",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDg2NDI2LCJpYXQiOjE2NzUwNjg0MjZ9.CRcM6AtOigbvpidJhqLyTDGDHINnPnpucOun0G4wbBSNTBp9H3KtMu_nF47zKoAdQP_qpsAJDm82RM7RpzGn1w",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/destination/İzmir",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"destination",
+						"İzmir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAeroplaneServicesByMonth",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDg2NDkxLCJpYXQiOjE2NzUwNjg0OTF9.eOXacYgA7rd1fOhQ1mYzZ9FYxEemugiHrPaA-5KF4EfWJB2a3h15LWWPJU633L8pHAygmxxRe8L_aUudWkD9NA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/month/Nisan",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"month",
+						"Nisan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAeroplaneServicesByMonthAndDay",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDZW1ExLFybWFuIiwiZXhwIjoxNjc1MDg2NTQzLCJpYXQiOjE2NzUwNjg1NDN9.D1rTsU1Y6DRQnRYleWcIYv3jSIZxH98ADyP1NPG_WjITo4cbKeBrw01Nu1C4R1IMUUCrxoGpR7hVD6ZedfuhUQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/month/day/Şubat/30",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"month",
+						"day",
+						"Şubat",
+						"30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAeroplaneServicesByMonthAndDayAndHour",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDg2NjcwLCJpYXQiOjE2NzUwNjg2NzB9.cP16WL662Ay6lJ_bMfl5ClEbBjaAJ_UaKSKhVewHyGuKH5L-W2F0FF7krao29V9JvuEiexco2hl770WpIFwtWA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/aeroplane/services/month/day/hour/Mart/30/18.00",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"aeroplane",
+						"services",
+						"month",
+						"day",
+						"hour",
+						"Mart",
+						"30",
+						"18.00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPaymentsWithCreditCard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/payment/creditCard/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"payment",
+						"creditCard",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPaymentsWithEFT",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/payment/EFT/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"payment",
+						"EFT",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTicketsByUserName",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCaWxnZUthZ2FuIiwiZXhwIjoxNjc1MDkwOTAzLCJpYXQiOjE2NzUwNzI5MDN9.IyaUCos7cmi1JfJAvtkkQcf-mkkFqPwWvIePtW5LReIhgoG9JlB5-8H15vw83mMwFQ-Prpl6vrSUmQnsrsnCnQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/BilgeKagan/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"BilgeKagan",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers(admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA4OTQyNCwiaWF0IjoxNjc1MDcxNDI0fQ.2ua3E0GvcuOW_qczDTiIlUKIUnVD0cshuojJqhX8-fxtjKCzOF-mq-dtS33uyvfM4oZauzrxWEyk5MnAB6KE2w",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/users/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTickets(admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA5MDg2MCwiaWF0IjoxNjc1MDcyODYwfQ.ziHw1rtcZMRMbo62kzRcEzf2OQGUsAkYTW42eTWNs-Tme13z7RXhwv34euHZ59ul4TIGF8N5UAjwqUu9g0F18Q",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/tickets/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"tickets",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBusTickets(admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA5MTA4NiwiaWF0IjoxNjc1MDczMDg2fQ.d3tVy452YU0X1bCw52SwLQ1eziszJlmEsbWg41ck195VNsq3AYIah3SBEQ8kjGGDfSK1P7uII7xaRc9dVdxZrg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/tickets/bus",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"tickets",
+						"bus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAeroplaneTickets(admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA5MTA4NiwiaWF0IjoxNjc1MDczMDg2fQ.d3tVy452YU0X1bCw52SwLQ1eziszJlmEsbWg41ck195VNsq3AYIah3SBEQ8kjGGDfSK1P7uII7xaRc9dVdxZrg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/tickets/aeroplane",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"tickets",
+						"aeroplane"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNumberOfAllTicketsByServiceId(admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA5MTA4NiwiaWF0IjoxNjc1MDczMDg2fQ.d3tVy452YU0X1bCw52SwLQ1eziszJlmEsbWg41ck195VNsq3AYIah3SBEQ8kjGGDfSK1P7uII7xaRc9dVdxZrg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/tickets/sold/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"tickets",
+						"sold",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNumberOfAllTickets(admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA5MTA4NiwiaWF0IjoxNjc1MDczMDg2fQ.d3tVy452YU0X1bCw52SwLQ1eziszJlmEsbWg41ck195VNsq3AYIah3SBEQ8kjGGDfSK1P7uII7xaRc9dVdxZrg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/tickets/sold/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"tickets",
+						"sold",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllIncomeByServiceId(admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA5MTA4NiwiaWF0IjoxNjc1MDczMDg2fQ.d3tVy452YU0X1bCw52SwLQ1eziszJlmEsbWg41ck195VNsq3AYIah3SBEQ8kjGGDfSK1P7uII7xaRc9dVdxZrg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/tickets/income/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"tickets",
+						"income",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTotalIncome(admin)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA5MTA4NiwiaWF0IjoxNjc1MDczMDg2fQ.d3tVy452YU0X1bCw52SwLQ1eziszJlmEsbWg41ck195VNsq3AYIah3SBEQ8kjGGDfSK1P7uII7xaRc9dVdxZrg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/tickets/income/total",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"tickets",
+						"income",
+						"total"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminDeleteBusService",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA4ODg5OCwiaWF0IjoxNjc1MDcwODk4fQ.FulxYv8JED-hhgRPhJ4dzp6qpcQqp6d_wWueAHVeTFzKPqUK-SOePujVRy5WSC8UliaIIBr8rfNSM0sOQS91FQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/bus/services/delete/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"bus",
+						"services",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adminDeleteAeroplaneService",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbjEyMyIsImV4cCI6MTY3NTA4NjI4NCwiaWF0IjoxNjc1MDY4Mjg0fQ.Vh9x1moBHBMriV-ML9CRV-DMiUJ35Aw8u9dgNA-7hOd38WAhZwImoF-Mr_BbmCmDLS5XDA-8IW0Jz5u97X6dLg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/admin/aeroplane/services/delete/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"aeroplane",
+						"services",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
